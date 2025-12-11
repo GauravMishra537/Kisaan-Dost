@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shipping - Kisaan Dost</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header (same structure as index.html so the page matches your site) -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Home</a>
+          <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+          <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a>
+        </div>
+        <div class="hidden sm:flex sm:items-center sm:ml-6">
+          <a id="desktop-cart-link" href="profile.html?tab=cart" class="p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+            <span class="sr-only">View cart</span>
+            <!-- cart icon -->
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-7xl mx-auto py-16 px-6">
+    <div class="bg-white shadow rounded-lg p-8">
+      <div class="flex items-center justify-between mb-6">
+        <h1 class="text-3xl font-extrabold text-gray-900">Shipping & Delivery</h1>
+        <a href="index.html" class="text-sm text-gray-600 hover:underline">← Back to Home</a>
+      </div>
+
+      <p class="text-gray-700 mb-4">
+        We work with local logistics partners and small carriers to deliver fresh produce from farmers to your door.
+        Below are the details about shipping areas, timelines and fees.
+      </p>
+
+      <section class="mb-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">Delivery Areas</h2>
+        <p class="text-gray-700">Currently we deliver within selected cities and surrounding regions. When placing an order you will be able to enter your full address — the system checks whether delivery is available to your pincode at checkout.</p>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">Estimated Delivery Times</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-1">
+          <li>Same-day delivery: Available for selected nearby zip codes if the order is placed before 10:00 AM.</li>
+          <li>Next-day delivery: Standard for most locations when ordered before 6:00 PM.</li>
+          <li>Rural / remote areas: 2–3 business days depending on logistics partner availability.</li>
+        </ul>
+      </section>
+
+      <section class="mb-6">
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">Shipping Fees</h2>
+        <p class="text-gray-700">We apply a small shipping fee for short-distance deliveries. In many locations we offer free shipping for orders above a threshold (example: ₹500).</p>
+        <div class="mt-3 p-4 border rounded text-gray-700">
+          <strong>Example policy:</strong>
+          <ul class="list-disc list-inside mt-2">
+            <li>Orders &lt; ₹200: Delivery charge ₹10</li>
+            <li>Orders ≥ ₹200: Free delivery</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-semibold text-gray-900 mb-2">Packaging & Quality</h2>
+        <p class="text-gray-700">We pack perishables carefully to preserve freshness — insulated boxes for sensitive items and produce-friendly packing. If you receive an item that doesn't meet expectations, please contact support within 24 hours and we’ll resolve it.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-400">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="space-y-8 xl:col-span-1">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <p class="text-gray-400 text-base">Farming made simple. From soil to sale.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Shop</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="products.html?category=Vegetable" class="text-base text-gray-400 hover:text-white">Vegetables</a></li>
+                <li><a href="products.html?category=Fruit" class="text-base text-gray-400 hover:text-white">Fruits</a></li>
+                <li><a href="products.html?category=Grain" class="text-base text-gray-400 hover:text-white">Grains</a></li>
+                <li><a href="products.html?category=Herb" class="text-base text-gray-400 hover:text-white">Herbs</a></li>
+              </ul>
+            </div>
+            <div class="mt-12 md:mt-0">
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">About</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="mission.html" class="text-base text-gray-400 hover:text-white">Our Mission</a></li>
+                <li><a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a></li>
+                <li><a href="for-farmers.html" class="text-base text-gray-400 hover:text-white">For Farmers</a></li>
+                <li><a href="careers.html" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="contact.html" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                <li><a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="shipping.html" class="text-base text-gray-400 hover:text-white">Shipping</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; <span id="site-year-shipping">2025</span> Kisaan Dost. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('site-year-shipping').textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Farmer Dashboard - Kisaan Dost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="farmer-dashboard-bg min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <a href="index.html" class="flex items-center">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+        </a>
+
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Home</a>
+          <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+          <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-green-500 text-base font-medium text-gray-900">Farmer Portal</a>
+        </div>
+
+        <div class="flex items-center space-x-3">
+          <!-- top cart icon linking to profile cart -->
+          <a id="top-cart-link" href="profile.html?tab=cart" class="p-2 rounded-full text-gray-600 hover:text-gray-800 hover:bg-gray-100" title="View cart">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container mx-auto p-6 relative z-10">
+    <div class="bg-white bg-opacity-90 p-6 rounded-lg shadow-xl mb-6">
+
+      <div class="flex justify-center space-x-4 mb-6">
+        <button id="show-add-form-btn" class="px-6 py-3 font-semibold text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">
+          List New Product
+        </button>
+        <button id="show-view-list-btn" class="px-6 py-3 font-semibold text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+          View My Products
+        </button>
+      </div>
+
+      <!-- Add / Edit form -->
+      <div id="add-product-section" class="hidden">
+        <div class="max-w-xl mx-auto rounded-lg">
+          <h2 id="form-title" class="text-2xl font-bold mb-4 text-gray-800">List New Product</h2>
+          <form id="product-form" class="space-y-4">
+            <input type="hidden" id="product-id">
+
+            <div>
+              <label for="name" class="block text-sm font-medium text-gray-700">Product Name</label>
+              <input type="text" id="name" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+            </div>
+
+            <div>
+              <label for="category" class="block text-sm font-medium text-gray-700">Category</label>
+              <select id="category" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+                <option value="">-- Select a Category --</option>
+                <option value="Vegetable">Vegetable</option>
+                <option value="Fruit">Fruit</option>
+                <option value="Grain">Grain</option>
+                <option value="Herb">Herb</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div>
+                <label for="price" class="block text-sm font-medium text-gray-700">Price (per Kg)</label>
+                <input type="number" id="price" min="0" step="0.01" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+              </div>
+
+              <div>
+                <label for="countInStock" class="block text-sm font-medium text-gray-700">Count in Stock (Kg)</label>
+                <input type="number" id="countInStock" min="0" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm" value="0">
+              </div>
+            </div>
+
+            <div>
+              <label for="image" class="block text-sm font-medium text-gray-700">Image URL</label>
+              <input type="text" id="image" placeholder="https://..." required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+            </div>
+
+            <div>
+              <label for="location" class="block text-sm font-medium text-gray-700">Location</label>
+              <input type="text" id="location" placeholder="e.g., Greater Noida, Uttar Pradesh" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm">
+            </div>
+
+            <div>
+              <button id="submit-button" type="submit" class="w-full py-2 px-4 bg-green-600 text-white font-semibold rounded-md hover:bg-green-700">
+                Add Product
+              </button>
+              <button id="cancel-edit-button" type="button" class="hidden w-full py-2 px-4 mt-2 bg-gray-500 text-white font-semibold rounded-md hover:bg-gray-600">
+                Cancel Edit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product grid -->
+    <div id="view-products-section" class="hidden">
+      <h2 class="text-3xl font-bold mb-4 text-gray-800">My Listed Products</h2>
+      <div id="product-list-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <p id="loading-text" class="text-gray-700 text-lg">Loading your products...</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="farmer-dashboard.js"></script>
+</body>
+</html>

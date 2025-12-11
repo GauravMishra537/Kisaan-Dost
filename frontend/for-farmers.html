@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>For Farmers — Kisaan Dost</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-cream min-h-screen"> <!-- use your site background or default -->
+
+  <!-- Header (same structure as index.html so the page matches your site) -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Home</a>
+          <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+          <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a>
+        </div>
+        <div class="hidden sm:flex sm:items-center sm:ml-6">
+          <a id="desktop-cart-link" href="profile.html?tab=cart" class="p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+            <span class="sr-only">View cart</span>
+            <!-- cart icon -->
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 py-12">
+    <!-- Page heading -->
+    <h1 class="text-4xl md:text-5xl font-extrabold text-green-800 mb-10">For Farmers</h1>
+
+    <!-- The Problem: Existing System -->
+    <section id="problem" class="mb-12">
+      <h2 class="text-3xl font-bold text-green-800 mb-8">The Problem: Existing System</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-green-600 mb-4">For Farmers</h3>
+          <p class="text-gray-700 leading-relaxed">
+            The conventional supply chain involves multiple intermediaries, which significantly reduces the profits for farmers.
+            Farmers often lack direct access to a wider market and have little control over pricing. This leaves them vulnerable to
+            low payments and uncertain demand.
+          </p>
+        </article>
+
+        <article class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-green-600 mb-4">For Consumers</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Consumers face higher prices due to the long chain of middlemen. The system lacks transparency, and delays often result in
+            spoilage of perishable goods, compromising freshness and quality by the time produce reaches the customer.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- The Solution: Proposed System -->
+    <section id="solution" class="mt-12">
+      <h2 class="text-3xl font-bold text-green-800 mb-8">The Solution: Proposed System</h2>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <article class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-green-600 mb-4">Direct Access for Farmers</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Our platform eliminates intermediaries, offering farmers direct access to consumers. Farmers can set their own prices,
+            manage listings, and sell produce directly, ensuring better profitability and faster payments.
+          </p>
+        </article>
+
+        <article class="bg-white p-8 rounded-lg shadow-sm border border-gray-100">
+          <h3 class="text-2xl font-bold text-green-600 mb-4">Fresh & Fair for Consumers</h3>
+          <p class="text-gray-700 leading-relaxed">
+            Consumers get fresher products at reasonable prices. A transparent rating and review system helps buyers make informed choices,
+            while local delivery reduces transit time and spoilage — building trust and a direct link to the source of their food.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Optional extra: How it works or CTA for farmers to register -->
+    <section class="mt-12">
+      <div class="bg-white rounded-lg shadow-sm p-8 border border-gray-100">
+        <h3 class="text-2xl font-semibold text-gray-900 mb-4">How Farmers Join</h3>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          Farmers can sign up, create a profile, and list products using the Farmer Dashboard. We provide simple tools to manage inventory,
+          pricing, and orders — plus an easy-to-use sales view so farmers can track their revenue and order history.
+        </p>
+        <div>
+          <a href="farmer-dashboard.html" class="inline-block px-6 py-3 bg-green-600 text-white rounded shadow hover:bg-green-700">Go to Farmer Dashboard</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (keeps same structure as index.html footer) -->
+  <footer class="bg-gray-800" aria-labelledby="footer-heading">
+    <h2 id="footer-heading" class="sr-only">Footer</h2>
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="space-y-8 xl:col-span-1">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <p class="text-gray-400 text-base">Farming made simple. From soil to sale.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Shop</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="products.html?category=Vegetable" class="text-base text-gray-400 hover:text-white">Vegetables</a></li>
+                <li><a href="products.html?category=Fruit" class="text-base text-gray-400 hover:text-white">Fruits</a></li>
+                <li><a href="products.html?category=Grain" class="text-base text-gray-400 hover:text-white">Grains</a></li>
+                <li><a href="products.html?category=Herb" class="text-base text-gray-400 hover:text-white">Herbs</a></li>
+              </ul>
+            </div>
+            <div class="mt-12 md:mt-0">
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">About</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="mission.html" class="text-base text-gray-400 hover:text-white">Our Mission</a></li>
+                <li><a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a></li>
+                <li><a href="for-farmers.html" class="text-base text-gray-400 hover:text-white">For Farmers</a></li>
+                <li><a href="careers.html" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="#" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                <li><a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="shipping.html" class="text-base text-gray-400 hover:text-white">Shipping</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; <span id="site-year">2025</span> Kisaan Dost. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // set year dynamically
+    document.getElementById('site-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

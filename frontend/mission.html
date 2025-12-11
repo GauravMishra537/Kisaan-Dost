@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Mission - Kisaan Dost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header (same structure as index.html) -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <a href="index.html" class="flex items-center">
+            <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+            <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+          </a>
+        </div>
+
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-green-500 text-base font-medium text-gray-900">Home</a>
+          <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+          <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a> 
+        </div>
+
+
+          <!-- User links (Cart / Profile) -->
+          <div id="user-links" class="hidden sm:flex sm:items-center sm:ml-6 space-x-2">
+            <a id="desktop-cart-link" href="profile.html?tab=cart" class="p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500" title="View cart">
+              <span class="sr-only">View cart</span>
+              <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </a>
+
+              <!-- Profile dropdown (includes Admin wrapper) -->
+              <div id="profile-menu" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
+                <div class="py-1">
+                  <a href="profile.html?tab=cart" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Cart</a>
+                  <a href="profile.html?tab=orders" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Orders</a>
+                  <a href="profile.html?tab=info" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Account Info</a>
+
+                  <div id="admin-link-wrapper" class="hidden">
+                    <hr class="my-1">
+                    <a id="admin-portal-link" href="/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin Portal</a>
+                  </div>
+
+                  <hr class="my-1">
+                  <a id="desktop-logout-link" href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Logout</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center sm:hidden">
+          <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500" aria-expanded="false">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="hidden sm:hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1">
+        <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-green-50">Home</a>
+        <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">Products</a>
+        <a href="farmer-dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">Farmer Portal</a>
+        <a id="cart-link-mobile" href="profile.html?tab=cart" class="hidden block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">My Cart</a>
+        <a href="/admin" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">Admin Portal</a>
+      </div>
+      <div class="pt-4 pb-3 border-t border-gray-200">
+        <div id="auth-links-mobile" class="flex items-center px-5">
+          <div class="flex-shrink-0">
+            <button id="login-button-mobile" type="button" class="w-full inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50">Login</button>
+          </div>
+          <div class="ml-3">
+            <button id="signup-button-mobile" type="button" class="w-full inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700">Sign Up</button>
+          </div>
+        </div>
+        <div id="user-links-mobile" class="hidden px-5">
+          <button id="logout-button-mobile" type="button" class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50">Logout</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main: Mission content -->
+  <main class="max-w-7xl mx-auto py-16 px-6 grid md:grid-cols-2 gap-10 items-center">
+    <div>
+      <h2 class="text-4xl font-extrabold text-green-800 mb-6">Our Mission</h2>
+
+      <h3 class="text-2xl font-semibold text-gray-900 mb-4">What is Kisaan Dost?</h3>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Kisaan Dost is a web-based platform designed to bridge the gap between farmers and consumers
+        by creating a direct-to-consumer agricultural marketplace.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        Our mission is to empower farmers with digital tools to sell their produce fairly and transparently,
+        eliminating middlemen and maximizing profits for producers.
+      </p>
+
+      <p class="text-gray-700 leading-relaxed mb-4">
+        We aim to build a sustainable, tech-driven ecosystem that benefits both farmers and customers —
+        ensuring fresh, organic produce reaches every household while supporting India’s agricultural backbone.
+      </p>
+    </div>
+
+    <div class="flex justify-center">
+      <img src="mission.png.jpg"
+           alt="Farmer holding vegetables"
+           class="rounded-lg shadow-lg w-full max-w-md object-cover">
+    </div>
+  </main>
+
+  <!-- Footer (same structure as index.html footer) -->
+  <footer class="bg-gray-800 text-gray-400">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="space-y-8 xl:col-span-1">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <p class="text-gray-400 text-base">
+            Farming made simple. From soil to sale.
+          </p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Shop</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="products.html?category=Vegetable" class="text-base text-gray-400 hover:text-white">Vegetables</a></li>
+                <li><a href="products.html?category=Fruit" class="text-base text-gray-400 hover:text-white">Fruits</a></li>
+                <li><a href="products.html?category=Grain" class="text-base text-gray-400 hover:text-white">Grains</a></li>
+                <li><a href="products.html?category=Herb" class="text-base text-gray-400 hover:text-white">Herbs</a></li>
+              </ul>
+            </div>
+            <div class="mt-12 md:mt-0">
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">About</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="mission.html" class="text-base text-gray-400 hover:text-white">Our Mission</a></li>
+                <li><a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a></li>
+                <li><a href="for-farmers.html" class="text-base text-gray-400 hover:text-white">For Farmers</a></li>
+                <li><a href="#" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="#" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                <li><a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="#" class="text-base text-gray-400 hover:text-white">Shipping</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+          &copy; <span id="site-year">2025</span> Kisaan Dost. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

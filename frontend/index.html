@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kisaan Dost - Farm Fresh Produce</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- HEADER -->
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+                    <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+                </div>
+
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-green-500 text-base font-medium text-gray-900">Home</a>
+                    <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+                    <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a>
+                </div>
+
+                <div class="hidden sm:flex sm:items-center sm:ml-6">
+                    <div id="auth-links" class="hidden sm:flex sm:items-center sm:ml-6 space-x-4">
+                        <button id="login-button" type="button" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50">Login</button>
+                        <button id="signup-button" type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700">Sign Up</button>
+                    </div>
+
+                    <div id="user-links" class="hidden sm:flex sm:items-center sm:ml-6 space-x-2">
+                        <a id="desktop-cart-link" href="profile.html?tab=cart" class="p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500">
+                            <span class="sr-only">View cart</span>
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </a>
+                        <div class="relative ml-3">
+                            <button id="profile-menu-button" type="button" class="inline-flex items-center justify-center px-4 py-2 rounded-md font-medium text-gray-700 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500">
+                                Profile
+                                <svg class="ml-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            </button>
+                            <div id="profile-menu" class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-40">
+                                <a href="profile.html?tab=cart" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Cart</a>
+                                <a href="profile.html?tab=settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Account Info</a>
+                                <a href="profile.html?tab=orders" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Order History</a>
+                                <a href="admin.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin Portal</a>
+                                <hr class="my-1">
+                                <a id="desktop-logout-link" href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex items-center sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/></svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden sm:hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 bg-green-50">Home</a>
+                <a href="products.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">Products</a>
+                <a href="farmer-dashboard.html" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">Farmer Portal</a>
+                <a id="cart-link-mobile" href="profile.html?tab=cart" class="hidden block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">My Cart</a>
+                <a href="/admin" class="block px-3 py-2 rounded-md text-base font-medium text-gray-500 hover:bg-gray-50 hover:text-gray-700">Admin Portal</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-200">
+                <div id="auth-links-mobile" class="flex items-center px-5">
+                    <div class="flex-shrink-0">
+                        <button id="login-button-mobile" type="button" class="w-full inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50">Login</button>
+                    </div>
+                    <div class="ml-3">
+                        <button id="signup-button-mobile" type="button" class="w-full inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700">Sign Up</button>
+                    </div>
+                </div>
+                <div id="user-links-mobile" class="hidden px-5">
+                    <button id="logout-button-mobile" type="button" class="w-full inline-flex justify-center items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <div class="relative hero-bg overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span class="text-white text-opacity-10 text-8xl md:text-9xl font-extrabold tracking-wide transform -rotate-12 select-none">Fresh Farm Sale</span>
+                </div>
+                <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+            </div>
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 sm:py-48">
+                <div class="text-center">
+                    <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                        Fresh From The Farm,
+                        <span class="block text-green-400">Direct To You.</span>
+                    </h1>
+                    <p class="mt-6 max-w-lg mx-auto text-xl text-gray-200">
+                        Connecting local farmers with consumers. Get the freshest produce while supporting your community.
+                    </p>
+                    <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
+                        <a href="products.html" class="w-full sm:w-auto px-8 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-600 hover:bg-green-700 sm:text-lg">
+                            Shop All Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section id="featured-products" class="bg-gray-50 py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl">Shop by Category</h2>
+                    <p class="mt-4 text-lg text-gray-500">Find exactly what you're looking for.</p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+                    <a href="products.html?category=Vegetable" class="group relative bg-white p-4 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl block">
+                        <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                            <img src="image_d87443.jpg.png" alt="Seasonal Veggie Box" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-gray-900 text-center">Vegetables</h3>
+                        </div>
+                    </a>
+
+                    <a href="products.html?category=Fruit" class="group relative bg-white p-4 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl block">
+                        <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                            <img src="image_d87aaf.jpg.png" alt="Fruit Orchard Basket" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-gray-900 text-center">Fruits</h3>
+                        </div>
+                    </a>
+
+                    <a href="products.html?category=Grain" class="group relative bg-white p-4 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl block">
+                        <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                            <img src="image_d87ace.jpg.png" alt="Grains and Pulses" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-gray-900 text-center">Grains</h3>
+                        </div>
+                    </a>
+
+                    <a href="products.html?category=Herb" class="group relative bg-white p-4 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-xl block">
+                        <div class="w-full min-h-60 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-60 lg:aspect-none">
+                            <img src="image_d87aeb.jpg.png" alt="Mixed Herb Bundle" class="w-full h-full object-center object-cover">
+                        </div>
+                        <div class="mt-4">
+                            <h3 class="text-xl font-semibold text-gray-900 text-center">Herbs</h3>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+                    <p class="text-gray-400 text-base">Farming made simple. From soil to sale.</p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Shop</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="products.html?category=Vegetable" class="text-base text-gray-400 hover:text-white">Vegetables</a></li>
+                                <li><a href="products.html?category=Fruit" class="text-base text-gray-400 hover:text-white">Fruits</a></li>
+                                <li><a href="products.html?category=Grain" class="text-base text-gray-400 hover:text-white">Grains</a></li>
+                                <li><a href="products.html?category=Herb" class="text-base text-gray-400 hover:text-white">Herbs</a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">About</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="mission.html" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-white">Our Mission</a></li>
+                                <li><a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a></li>
+                                <li><a href="for-farmers.html" target="_blank" rel="noopener noreferrer" class="text-base text-gray-400 hover:text-white">For Farmers</a></li>
+                                <li><a href="careers.html" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                                <li><a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                                <li><a href="shipping.html" class="text-base text-gray-400 hover:text-white">Shipping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; 2025 Kisaan Dost. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL BACKDROP -->
+    <div id="modal-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-75 z-40"></div>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="relative bg-white rounded-lg shadow-xl w-full max-w-md">
+            <div class="flex justify-between items-center p-5 border-b">
+                <h3 class="text-2xl font-semibold text-gray-900">Login</h3>
+                <button id="login-close-button" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5">✕</button>
+            </div>
+            <div class="p-6 space-y-4">
+                <form class="space-y-6">
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
+                        <input id="email" type="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5" required />
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
+                        <input id="password" type="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-500 focus:border-green-500 block w-full p-2.5" required />
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <a href="#forgot" class="text-sm text-green-700 hover:underline">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="w-full text-white bg-green-600 hover:bg-green-700 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5">Login to your account</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+<!-- Signup Modal (replace existing signup modal) -->
+<div id="signup-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+  <div class="relative bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+    <div class="flex justify-between items-center p-5 border-b">
+      <h3 class="text-2xl font-semibold text-gray-900">Create an Account</h3>
+      <button id="signup-close-button" type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+      </button>
+    </div>
+
+    <div class="p-6 space-y-4">
+      <form id="signup-form" class="grid grid-cols-1 gap-4">
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Full name</label>
+            <input id="signup-name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Email</label>
+            <input id="signup-email" type="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Password</label>
+            <input id="signup-password" type="password" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Mobile No</label>
+            <input id="signup-mobile" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">I am a...</label>
+          <select id="signup-user-type" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2">
+            <option value="Buyer">Buyer (I want to purchase)</option>
+            <option value="Farmer">Farmer (I want to sell)</option>
+          </select>
+        </div>
+
+        <div id="farm-section" class="hidden">
+          <label class="block text-sm font-medium text-gray-700">Farm / Shop Name (optional)</label>
+          <input id="farm-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+        </div>
+
+        <!-- Address -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Address Line 1</label>
+            <input id="signup-address1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Address Line 2</label>
+            <input id="signup-address2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">City</label>
+            <input id="signup-city" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">State</label>
+            <input id="signup-state" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Pincode</label>
+            <input id="signup-pincode" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" required />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Country</label>
+          <input id="signup-country" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" value="India" />
+        </div>
+
+        <!-- Bank details shown only for Farmers -->
+        <div id="bank-section" class="hidden space-y-2">
+          <div class="text-sm font-medium text-gray-700">Bank Details (for Farmers)</div>
+          <div class="grid grid-cols-2 gap-4">
+            <input id="bank-account-name" placeholder="Account holder name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+            <input id="bank-account-number" placeholder="Account number" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <input id="bank-ifsc" placeholder="IFSC" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+            <input id="bank-name" placeholder="Bank name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+          <div>
+            <input id="bank-upi" placeholder="UPI id (optional)" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+        </div>
+
+        <!-- Security question -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Security question (used for password recovery)</label>
+            <select id="signup-security-question-select" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2">
+              <option value="">-- choose one --</option>
+              <option value="What was your childhood nickname?">What is your father's name?</option>
+              <option value="What is your mother's maiden name?">What is your favourite colour?</option>
+              <option value="What was the name of your first school?">What was the name of your first school?</option>
+              <option value="What is your favourite book?">What is your favourite sports?</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Answer</label>
+            <input id="signup-security-answer" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2" />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between pt-4">
+          <div class="text-sm text-gray-500">Already have an account? <a href="#" id="open-login-from-signup" class="text-green-700">Login here</a></div>
+          <button type="submit" class="px-6 py-2 rounded bg-green-600 text-white font-medium">Create Account</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <!-- FORGOT PASSWORD MODAL -->
+    <div id="forgot-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center overflow-y-auto p-4">
+        <div class="relative bg-white rounded-lg shadow-xl w-full max-w-md max-h-[90vh] overflow-y-auto">
+            <div class="flex justify-between items-center p-4 border-b">
+                <h3 class="text-lg font-semibold">Forgot Password</h3>
+                <button id="forgot-close" class="text-gray-400 p-1.5">✕</button>
+            </div>
+            <div class="p-4 space-y-4">
+                <div id="fp-step-email">
+                    <p class="text-sm text-gray-600">Enter the email associated with your account. We'll ask your security question.</p>
+                    <input id="fp-email" type="email" class="w-full p-2 border rounded mt-2" placeholder="you@example.com" />
+                    <div class="flex justify-end mt-3 space-x-2">
+                        <button id="fp-email-submit" class="px-4 py-2 bg-green-600 text-white rounded">Next</button>
+                    </div>
+                </div>
+
+                <div id="fp-step-question" class="hidden">
+                    <p class="text-sm text-gray-800 mb-2" id="fp-question-text">Security question goes here</p>
+                    <input id="fp-answer" class="w-full p-2 border rounded" placeholder="Your answer" />
+                    <input id="fp-new-password" type="password" class="w-full p-2 border rounded mt-3" placeholder="New password" />
+                    <div class="flex justify-end mt-3 space-x-2">
+                        <button id="fp-reset-submit" class="px-4 py-2 bg-green-600 text-white rounded">Reset Password</button>
+                    </div>
+                </div>
+
+                <div id="fp-message" class="text-sm text-gray-600 hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MAIN.JS -->
+    <script src="main.js"></script>
+</body>
+</html>

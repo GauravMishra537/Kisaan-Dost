@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Kisaan Dost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img class="h-16 w-16 rounded-full" 
+                         src="kisaanlogo.jpg" 
+                         alt="Kisaan Dost Logo">
+                    <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+                </div>
+                
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Home</a>
+                    <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+                    <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a> 
+                </div>
+
+                    <div id="user-links" class="hidden sm:flex sm:items-center sm:ml-6 space-x-2">
+                        <a id="desktop-cart-link" href="profile.html" class="p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500">
+                            <span class="sr-only">View cart</span>
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                            </svg>
+                        </a>
+                        <div class="relative ml-3">
+                            <div id="profile-menu" class="hidden origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-40">
+                                <a href="profile.html?tab=settings" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Account Setting</a>
+                                <a href="profile.html?tab=orders" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Order History</a>
+                                <a href="/admin" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Admin Portal</a>
+                                <hr class="my-1">
+                                <a id="desktop-logout-link" href="#" class="block px-4 py-2 text-sm text-red-600 hover:bg-gray-100">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex items-center sm:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-green-500" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+        </header>
+
+    <main>
+        <section class="bg-white py-16 sm:py-24">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-green-600 tracking-wide uppercase">How It Works</h2>
+                    <p class="mt-2 text-3xl font-extrabold text-gray-900 sm:text-4xl">
+                        Farm-to-Table in 3 Simple Steps
+                    </p>
+                </div>
+                <div class="mt-16 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-3">
+                    <div class="flex flex-col items-center text-center p-6 rounded-lg">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-700">
+                                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-xl font-semibold text-gray-900">1. Farmers List Produce</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                Local farmers list their fresh produce, set their own prices, and manage their inventory directly on our platform.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 rounded-lg">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-700">
+                                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-xl font-semibold text-gray-900">2. You Place an Order</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                You browse fresh, local produce by category or farmer, add items to your cart, and place your order with just a few clicks.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex flex-col items-center text-center p-6 rounded-lg">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-16 w-16 rounded-full bg-green-100 text-green-700">
+                                <svg class="h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="mt-5">
+                            <h3 class="text-xl font-semibold text-gray-900">3. Fresh Delivery</h3>
+                            <p class="mt-2 text-base text-gray-500">
+                                The farmer receives your order and handles the delivery, ensuring you get the freshest produce, often picked the same day.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800" aria-labelledby="footer-heading">
+        <h2 id="footer-heading" class="sr-only">Footer</h2>
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+            <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                <div class="space-y-8 xl:col-span-1">
+                    <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+                    <p class="text-gray-400 text-base">
+                        Farming made simple. From soil to sale.
+                    </p>
+                </div>
+                <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Shop</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="products.html?category=Vegetable" class="text-base text-gray-400 hover:text-white">Vegetables</a></li>
+                                <li><a href="products.html?category=Fruit" class="text-base text-gray-400 hover:text-white">Fruits</a></li>
+                                <li><a href="products.html?category=Grain" class="text-base text-gray-400 hover:text-white">Grains</a></li>
+                                <li><a href="products.html?category=Herb" class="text-base text-gray-400 hover:text-white">Herbs</a></li>
+                            </ul>
+                        </div>
+                        <div class="mt-12 md:mt-0">
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">About</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="mission.html" class="text-base text-gray-400 hover:text-white">Our Mission</a></li>
+                                <li><a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a></li>
+                                <li><a href="for-farmers.html" class="text-base text-gray-400 hover:text-white">For Farmers</a></li>
+                                <li><a href="careers.html" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="md:grid md:grid-cols-2 md:gap-8">
+                        <div>
+                            <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+                            <ul role="list" class="mt-4 space-y-4">
+                                <li><a href="#" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                                <li><a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                                <li><a href="shipping.html" class="text-base text-gray-400 hover:text-white">Shipping</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+                <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">
+                    &copy; 2025 Kisaan Dost. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-backdrop" class="hidden fixed inset-0 bg-black bg-opacity-75 z-40"></div>
+    <div id="login-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        </div>
+    <div id="signup-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+         </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

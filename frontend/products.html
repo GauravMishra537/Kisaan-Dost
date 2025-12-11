@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Kisaan Dost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="farmer-dashboard-bg min-h-screen">
+
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex-shrink-0 flex items-center">
+                    <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+                    <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+                </a>
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                    <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Home</a>
+                    <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-green-500 text-base font-medium text-gray-900">Products</a>
+                    <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a>
+                      <a id="nav-cart-link" href="profile.html?tab=cart" class="inline-flex items-center px-1 pt-1 text-base font-medium text-gray-500 hover:text-gray-700">
+             <!-- cart icon -->
+            <svg class="h-6 w-6 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4z"></path>
+            </svg>
+        </a>    
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-6 relative z-10">
+        <div class="page-content-box">
+            <section id="products-section">
+                <h2 id="products-title" class="text-3xl font-extrabold text-gray-900 mb-6">Loading Products...</h2>
+                <div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer class="bg-gray-800" aria-labelledby="footer-heading">
+        </footer>
+
+    <script src="products-page.js"></script>
+</body>
+</html>

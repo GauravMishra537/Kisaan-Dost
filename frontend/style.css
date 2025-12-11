@@ -1,0 +1,45 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Inter', sans-serif;
+}
+.hero-bg {
+    background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+}
+.bg-pattern {
+    background-color: #f8fafc;
+    background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1fae5' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+}
+.farmer-dashboard-bg {
+    background-image: url('image_46d740.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+.farmer-dashboard-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+/* ===== This is the white box style ===== */
+.page-content-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem; /* 24px */
+    border-radius: 0.5rem; /* 8px */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+#signup-modal input,
+#signup-modal select,
+#signup-modal textarea {
+    border: 1px solid #000;
+}

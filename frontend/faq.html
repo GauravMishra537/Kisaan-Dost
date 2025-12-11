@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FAQ — Kisaan Dost</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* small page-specific tweaks for readability */
+    .faq-container { max-width: 900px; margin: 36px auto; }
+    .faq-card { background: white; padding: 28px; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
+    .faq-section h3 { margin-top: 18px; margin-bottom: 6px; }
+    .faq-q { font-weight: 600; color: #111827; }
+    .faq-a { color: #374151; margin-bottom: 12px; }
+    .back-link { color:#0f766e; text-decoration:underline; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen font-sans">
+
+  <!-- <header class="bg-white shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <img src="kisaanlogo.jpg" class="h-12 w-12 rounded-full" alt="Kisaan Dost">
+        <h1 class="text-xl font-bold">Kisaan Dost — FAQ</h1>
+      </div>
+      <div>
+        <a href="index.html" class="px-3 py-2 border rounded hover:bg-gray-100">Back to site</a>
+      </div>
+    </div>
+  </header> -->
+    <!-- Header (same as index/mission) -->
+  <!-- Header (same structure as index.html so the page matches your site) -->
+  <header class="bg-white shadow-sm sticky top-0 z-30">
+    <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <div class="flex-shrink-0 flex items-center">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <span class="font-bold text-2xl ml-3 text-gray-800">Kisaan Dost</span>
+        </div>
+        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+          <a href="index.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Home</a>
+          <a href="products.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Products</a>
+          <a href="farmer-dashboard.html" class="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-base font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">Farmer Portal</a>
+        </div>
+        <div class="hidden sm:flex sm:items-center sm:ml-6">
+          <a id="desktop-cart-link" href="profile.html?tab=cart" class="p-2 rounded-full text-gray-400 hover:text-gray-500 hover:bg-gray-100">
+            <span class="sr-only">View cart</span>
+            <!-- cart icon -->
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="faq-container px-4">
+    <div class="faq-card">
+      <h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+
+      <div class="faq-section">
+        <h3 class="text-xl font-semibold">🏠 About Kisaan Dost</h3>
+
+        <p class="faq-q">Q: What is Kisaan Dost?</p>
+        <p class="faq-a">A: Kisaan Dost is an online platform that connects farmers directly with customers, helping farmers sell their fresh produce without middlemen and allowing customers to buy farm-fresh products at fair prices.</p>
+
+        <p class="faq-q">Q: Who can use Kisaan Dost?</p>
+        <p class="faq-a">A: Both farmers and customers can register. Farmers can list their products for sale, and customers can browse and purchase directly from them.</p>
+
+        <p class="faq-q">Q: Is Kisaan Dost available across India?</p>
+        <p class="faq-a">A: Yes, Kisaan Dost serves farmers and customers from all regions of India. Delivery options may vary depending on your location.</p>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="faq-section">
+        <h3 class="text-xl font-semibold">👩‍🌾 For Farmers</h3>
+
+        <p class="faq-q">Q: How can I register as a farmer?</p>
+        <p class="faq-a">A: Click on 'Sign Up' → Choose 'Farmer' → Fill in your farm details and upload verification documents. Once approved, you can start listing products.</p>
+
+        <p class="faq-q">Q: How do I add my products?</p>
+        <p class="faq-a">A: Go to your Farmer Dashboard → Add Product, enter product details (name, quantity, price, and image), and click Submit.</p>
+
+        <p class="faq-q">Q: Can I edit or delete a listed product?</p>
+        <p class="faq-a">A: Yes, you can manage your listings from the 'My Products' section. Click 'Edit' to update or 'Delete' to remove an item.</p>
+
+        <p class="faq-q">Q: How will I get paid after selling my produce?</p>
+        <p class="faq-a">A: After a successful order and delivery confirmation, payment is securely transferred to your registered bank account.</p>
+
+        <p class="faq-q">Q: What if a buyer cancels the order?</p>
+        <p class="faq-a">A: If a buyer cancels before shipping, you will be notified. No penalty applies for unshipped orders.</p>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="faq-section">
+        <h3 class="text-xl font-semibold">🛒 For Customers</h3>
+
+        <p class="faq-q">Q: How can I order products?</p>
+        <p class="faq-a">A: Browse the Marketplace, add desired items to your cart, and proceed to checkout using your preferred payment method.</p>
+
+        <p class="faq-q">Q: What payment methods are accepted?</p>
+        <p class="faq-a">A: UPI, Debit/Credit Cards, Net Banking, and Cash on Delivery (if available).</p>
+
+        <p class="faq-q">Q: Can I track my order?</p>
+        <p class="faq-a">A: Yes, go to 'My Orders → Order Status' to track delivery progress in real time.</p>
+
+        <p class="faq-q">Q: What if I receive a damaged or wrong product?</p>
+        <p class="faq-a">A: You can raise a return or replacement request within 24 hours of delivery through the 'Order History' section.</p>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="faq-section">
+        <h3 class="text-xl font-semibold">🚚 Delivery & Shipping</h3>
+
+        <p class="faq-q">Q: How long does delivery take?</p>
+        <p class="faq-a">A: Delivery time usually ranges between 1–5 days, depending on the farmer’s location and your area.</p>
+
+        <p class="faq-q">Q: Is there a delivery charge?</p>
+        <p class="faq-a">A: Delivery charges are calculated based on distance and order amount. Some areas offer free delivery for larger orders.</p>
+
+        <p class="faq-q">Q: Can I schedule my delivery time?</p>
+        <p class="faq-a">A: Currently, delivery slots are assigned automatically, but flexible scheduling will be added soon.</p>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="faq-section">
+        <h3 class="text-xl font-semibold">🔐 Account & Support</h3>
+
+        <p class="faq-q">Q: I forgot my password. How can I reset it?</p>
+        <p class="faq-a">A: Click on 'Forgot Password' at the login screen and follow the steps to reset via email or OTP.</p>
+
+        <p class="faq-q">Q: How can I contact customer support?</p>
+        <p class="faq-a">A: You can reach us via the Contact Us page or email us at support@kisaandost.com (9 AM – 6 PM, Mon–Sat).</p>
+
+        <p class="faq-q">Q: How do I delete my account?</p>
+        <p class="faq-a">A: Please email support@kisaandost.com with your registered email ID to request account deletion.</p>
+      </div>
+
+      <hr class="my-4">
+
+      <div class="faq-section">
+        <h3 class="text-xl font-semibold">💡 General Queries</h3>
+
+        <p class="faq-q">Q: Is Kisaan Dost free to use?</p>
+        <p class="faq-a">A: Yes, registration is completely free for both farmers and customers. Only a small transaction fee applies on completed sales.</p>
+
+        <p class="faq-q">Q: How is Kisaan Dost different from other e-commerce sites?</p>
+        <p class="faq-a">A: Kisaan Dost is designed specifically for agriculture — it empowers farmers to earn more and customers to get organic, farm-fresh products directly from the source.</p>
+      </div>
+
+      <div class="mt-6 text-sm text-gray-500">
+        <p>FAQ content source: uploaded document. :contentReference[oaicite:1]{index=1}</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- <footer class="container mx-auto px-6 py-8 text-center text-sm text-gray-500"> -->
+      <!-- Footer (same structure as index.html footer) -->
+  <footer class="bg-gray-800 text-gray-400">
+    <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+        <div class="space-y-8 xl:col-span-1">
+          <img class="h-16 w-16 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+          <p class="text-gray-400 text-base">Farming made simple. From soil to sale.</p>
+        </div>
+        <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Shop</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="products.html?category=Vegetable" class="text-base text-gray-400 hover:text-white">Vegetables</a></li>
+                <li><a href="products.html?category=Fruit" class="text-base text-gray-400 hover:text-white">Fruits</a></li>
+                <li><a href="products.html?category=Grain" class="text-base text-gray-400 hover:text-white">Grains</a></li>
+                <li><a href="products.html?category=Herb" class="text-base text-gray-400 hover:text-white">Herbs</a></li>
+              </ul>
+            </div>
+            <div class="mt-12 md:mt-0">
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">About</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="mission.html" class="text-base text-gray-400 hover:text-white">Our Mission</a></li>
+                <li><a href="how-it-works.html" class="text-base text-gray-400 hover:text-white">How It Works</a></li>
+                <li><a href="for-farmers.html" class="text-base text-gray-400 hover:text-white">For Farmers</a></li>
+                <li><a href="careers.html" class="text-base text-gray-400 hover:text-white">Careers</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="md:grid md:grid-cols-2 md:gap-8">
+            <div>
+              <h3 class="text-sm font-semibold text-gray-300 tracking-wider uppercase">Support</h3>
+              <ul role="list" class="mt-4 space-y-4">
+                <li><a href="contact.html" class="text-base text-gray-400 hover:text-white">Contact Us</a></li>
+                <li><a href="faq.html" class="text-base text-gray-400 hover:text-white">FAQ</a></li>
+                <li><a href="shipping.html" class="text-base text-gray-400 hover:text-white">Shipping</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 border-t border-gray-700 pt-8 md:flex md:items-center md:justify-between">
+        <p class="mt-8 text-base text-gray-400 md:mt-0 md:order-1">&copy; <span id="site-year-careers">2025</span> Kisaan Dost. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+    <div>© <span id="year"></span> Kisaan Dost — All rights reserved.</div>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  </footer>
+</body>
+</html>

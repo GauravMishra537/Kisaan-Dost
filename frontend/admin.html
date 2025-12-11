@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Kisaan Dost</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-100 font-inter">
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-30">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img class="h-14 w-14 rounded-full" src="kisaanlogo.jpg" alt="Kisaan Dost Logo">
+                <span class="font-bold text-2xl ml-3 text-gray-800">Admin Dashboard</span>
+            </a>
+
+            <button id="logout-btn" class="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+                Logout
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main layout -->
+    <div class="container mx-auto px-6 py-8 flex">
+        
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white shadow rounded-lg p-4 h-full">
+            <h2 class="text-xl font-semibold mb-4">Admin Menu</h2>
+
+            <nav class="space-y-2">
+                <button class="admin-tab-btn w-full text-left px-4 py-2 bg-green-600 text-white rounded" data-tab="users">Users</button>
+                <button class="admin-tab-btn w-full text-left px-4 py-2 hover:bg-gray-200 rounded" data-tab="farmers">Farmers</button>
+                <button class="admin-tab-btn w-full text-left px-4 py-2 hover:bg-gray-200 rounded" data-tab="orders">Orders</button>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <main class="flex-1 ml-8">
+
+            <!-- USERS PANEL -->
+            <section id="tab-users" class="admin-tab bg-white p-6 rounded-lg shadow">
+                <h2 class="text-2xl font-bold mb-4">All Users</h2>
+                <div id="users-container" class="space-y-4">Loading users...</div>
+            </section>
+
+            <!-- FARMERS PANEL -->
+            <section id="tab-farmers" class="admin-tab bg-white p-6 rounded-lg shadow hidden">
+                <h2 class="text-2xl font-bold mb-4">Farmers</h2>
+                <div id="farmers-container" class="space-y-4">Loading farmers...</div>
+            </section>
+
+            <!-- ORDERS PANEL -->
+            <section id="tab-orders" class="admin-tab bg-white p-6 rounded-lg shadow hidden">
+                <div class="flex justify-between items-center">
+                    <h2 class="text-2xl font-bold mb-4">Orders</h2>
+
+                    <select id="order-status-filter" class="border p-2 rounded">
+                        <option value="">All</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Packed">Packed</option>
+                        <option value="Shipped">Shipped</option>
+                        <option value="Out for Delivery">Out for Delivery</option>
+                        <option value="Delivered">Delivered</option>
+                    </select>
+                </div>
+
+                <div id="orders-container" class="space-y-4">Loading orders...</div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
