@@ -1,178 +1,365 @@
 # Kisaan-Dost
-🚜 Kisaan – Farmer Management & Admin Monitoring System
+🌾 Kisaan Dost – A Full-Stack Agricultural E-Commerce Platform
+Connecting Farmers directly with Buyers | Fair Prices | Transparency | Digital Market for Rural India
 
-Kisaan is a full-stack agricultural management platform designed to streamline the communication and workflow between Admin, Block Officers, and Farmers.
-The system provides tools for farmer registration, order tracking, block-level monitoring, and a secure admin dashboard with granular access controls.
+Kisaan Dost is a full-stack agricultural marketplace built with Node.js + Express + MongoDB + Vanilla JS + TailwindCSS.
+
+The platform enables:
+
+👨‍🌾 Farmers to sell their crops
+
+🛒 Buyers to purchase fresh produce
+
+🧾 Order Management
+
+🚚 Delivery Tracking
+
+🛠 Admin Panel for monitoring the entire platform
+
+This project supports complete authentication, farmer product management, buyer cart system, order processing, payment selection, profile management, and a full admin monitoring dashboard.
+
+📌 Table of Contents
+
+⚙️ Tech Stack
 
 ✨ Features
-👨‍💼 Admin Panel
 
-Secure Admin Login (Username + Password)
+📂 Folder Structure
 
-Manage:
+🚀 Installation & Setup
 
-Block Officers
+🔐 Environment Variables
 
-Farmers
+🛠 API Endpoints Overview
 
-Orders
+🧑‍💼 Admin Panel Features
 
-Reports / Analytics
+🚚 Delivery Tracking Workflow
 
-Monitor all activity across all blocks
+🧪 Testing
 
-CRUD operations for all entities
+📌 Future Improvements
 
-Role-based access for future updates
-
-🌾 Farmer Module
-
-Farmer profile management
-
-Submit orders / requests
-
-Track order status
-
-Communication with assigned block officer
-
-🧑‍💼 Block Officer Module
-
-View & manage farmers under assigned block
-
-Approve / reject farmer requests
-
-Update order progress
-
-Submit reports to admin
-
-🗄️ Database Ready
-
-Fully structured MongoDB models for:
-
-Admin
-
-Block
-
-Farmer
-
-Orders
-
-Updates to models ensure no previously stored data is lost
-
-🏗️ Tech Stack
+⚙️ Tech Stack
 Frontend
 
-React.js
+HTML5, CSS3 (TailwindCSS)
 
-Tailwind CSS
+Vanilla JavaScript (ES6 Modules)
 
-Axios
+LocalStorage-based session handling
 
-React Router
+Fully responsive UI
 
 Backend
 
-Node.js
-
-Express.js
+Node.js + Express.js
 
 MongoDB + Mongoose
 
-JWT authentication
+JWT Authentication
 
-Bcrypt password hashing
+Middleware-based security
 
-📁 Project Structure
-Kisaan/
-│
+MVC structured routes
+
+Other Tools
+
+MongoDB Compass
+
+Postman / Thunder Client
+
+Git & GitHub
+
+✨ Core Features
+🔐 Authentication & Security
+
+Login / Signup (JWT based)
+
+Separate roles:
+
+Buyer
+
+Farmer
+
+Admin
+
+Password hashing using bcrypt
+
+Security Question + Answer for password recovery
+
+Blocked users cannot login
+
+👨‍🌾 Farmer Features
+
+Farmer-only dashboard
+
+Add new products
+
+Edit product
+
+Delete product
+
+Manage stock (countInStock)
+
+Product listing with categories
+
+Manage bank details for payout
+
+🛍️ Buyer Features
+
+Add items to cart
+
+Remove items from cart
+
+Cart quantity validation vs stock
+
+Profile management
+
+Update password, address, mobile number
+
+View transaction history (orders)
+
+Checkout with:
+
+Cash on Delivery
+
+UPI Payment (reference ID entry)
+
+📦 Product Features
+
+Category filters: Fruit, Vegetable, Grain, Herb, Other
+
+Stock tracking
+
+Ratings & review structure
+
+Location tagging
+
+Real products grid with:
+
+price
+
+location
+
+ratings
+
+out-of-stock blocking
+
+🧾 Order Features
+
+Order creation
+
+Order details stored:
+
+shipping address
+
+price calculation
+
+payment method
+
+list of each product in order
+
+Order history for buyers
+
+Order total, tax, shipping management
+
+Auto stock decrement on purchase
+
+🚚 Delivery Tracking (Full Workflow)
+
+Each order contains:
+
+status — Pending → Packed → Shipped → Out for Delivery → Delivered → Cancelled
+
+trackingNumber
+
+estimatedDelivery
+
+history[] — Full timeline with timestamps & notes
+
+Order History Example
+[
+  { status: "Pending", note: "Order created", timestamp: ... },
+  { status: "Packed", note: "Farmer packed items", timestamp: ... },
+  { status: "Shipped", note: "Left warehouse", timestamp: ... },
+]
+
+Shown to:
+
+Buyer in Profile → Orders
+
+Admin in Admin Portal → Orders
+
+🧑‍💼 Admin Panel (Full System)
+
+A fully built separate frontend located at admin.html + admin.js.
+
+Admin Features
+👥 User Management
+
+View all users
+
+Block / Unblock users
+
+Promote to Admin
+
+Delete users
+
+👨‍🌾 Farmer Management
+
+View all farmers
+
+View farmer details (address, phone, etc.)
+
+🧾 Order Management
+
+View all orders
+
+Filter orders by status
+
+Update order status
+
+Add tracking number
+
+Add delivery notes
+
+See complete order timeline
+
+🔐 Admin Login
+
+Separate admin-login.html page
+
+Allows only admin accounts to enter
+
+Uses JWT + server-side role validation
+
+📂 Folder Structure
+kisaan-dost/
 ├── backend/
-│   ├── controllers/
 │   ├── models/
-│   │   ├── Admin.js
-│   │   ├── Block.js
-│   │   ├── Farmer.js
-│   │   └── Order.js   ← updated model preserving old data
+│   │   ├── User.js
+│   │   ├── Product.js
+│   │   └── Order.js
 │   ├── routes/
+│   │   ├── auth.js
+│   │   ├── product.js
+│   │   ├── order.js
+│   │   ├── user.js
+│   │   ├── cart.js
+│   │   └── admin.js
 │   ├── middleware/
-│   └── server.js
+│   │   ├── authMiddleware.js
+│   │   └── ensureAdmin.js
+│   ├── server.js
+│   └── db.js
 │
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   │   ├── AdminLogin.jsx
-│   │   │   ├── AdminDashboard.jsx
-│   │   │   ├── FarmerPanel.jsx
-│   │   │   └── BlockDashboard.jsx
-│   │   ├── context/
-│   │   └── utils/
-│   └── package.json
+│   ├── index.html
+│   ├── products.html
+│   ├── farmer-dashboard.html
+│   ├── profile.html
+│   ├── payment.html
+│   ├── admin.html
+│   ├── admin-login.html
+│   ├── main.js
+│   ├── products-page.js
+│   ├── farmer-dashboard.js
+│   ├── profile.js
+│   ├── payment.js
+│   ├── admin.js
+│   └── style.css
 │
+├── package.json
+├── .env
 └── README.md
 
-🚀 Getting Started
-1️⃣ Clone the Repository
-git clone https://github.com/<your-username>/Kisaan.git
-cd Kisaan
+🚀 Installation & Setup
+1️⃣ Clone the project
+git clone https://github.com/YOUR_USERNAME/kisaan-dost.git
+cd kisaan-dost
 
-🔧 Backend Setup
-Install dependencies:
+2️⃣ Install backend dependencies
 cd backend
 npm install
 
-Create .env file:
-MONGO_URI=your_mongodb_url
-JWT_SECRET=your_secret_key
+3️⃣ Create .env
 PORT=5000
+MONGO_URI=mongodb://127.0.0.1:27017/kisaandost
+JWT_SECRET=your_secret_key_here
 
-Start backend server:
+4️⃣ Start backend
 npm start
 
-🖥️ Frontend Setup
-cd frontend
-npm install
-npm run dev
+5️⃣ Open frontend
 
+Just open frontend/index.html in the browser (or serve via Live Server).
 
-Frontend runs at:
+🔐 Environment Variables
+Variable	Description
+PORT	Backend port
+MONGO_URI	MongoDB Connection string
+JWT_SECRET	Secret to sign JWT tokens
+🛠 API Overview (Short Version)
+Authentication
 
-http://localhost:5173
+POST /api/auth/login
+POST /api/auth/register
 
+Products
 
-Backend runs at:
+GET /api/products
+POST /api/products (farmer)
+PUT /api/products/:id
+DELETE /api/products/:id
 
-http://localhost:5000
+Cart
 
-🔐 Admin Login Credentials
+GET /api/cart
+POST /api/cart
+DELETE /api/cart/:id
 
-Default initial admin user is created manually (or via seeding script):
+Orders
 
-username: admin
-password: <your-password>
+POST /api/orders
+GET /api/orders/myorders
+GET /api/orders/:id/status
+PUT /api/orders/:id/status (admin/farmer)
 
+Admin
 
-You can add more admins directly from the Admin Dashboard.
+GET /api/admin/users
+PUT /api/admin/users/:id/block
+PUT /api/admin/users/:id/unblock
+PUT /api/admin/users/:id/promote
+GET /api/admin/farmers
+GET /api/admin/orders
+PUT /api/admin/orders/:id/status
 
-🧪 API Testing (Optional)
+🧪 Testing
 
-You can test all backend routes using:
+Use Postman / Thunder Client to test:
 
-Postman
+Authentication
 
-Thunder Client
+Cart operations
 
-Swagger (if enabled in future updates)
+Order placement
 
-📌 Future Enhancements
+Admin role actions
 
-Multi-level user roles & permissions
+Delivery tracking update
 
-Geo-mapping of farmers & blocks
+📌 Future Improvements
 
-SMS/WhatsApp notifications
+OTP / SMS Login
 
-Automated reports
+Real payment gateway integration (Razorpay / Stripe)
 
-Weather & crop advisory system
+Farmer earnings dashboard (analytics)
 
-Progressive Web App (PWA) support
+Image upload to Cloudinary
+
+Live tracking with Maps API
+
+Push notifications
