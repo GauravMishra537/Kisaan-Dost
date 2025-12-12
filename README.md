@@ -276,7 +276,7 @@ kisaan-dost/
 
 🚀 Installation & Setup
 1️⃣ Clone the project
-git clone https://github.com/YOUR_USERNAME/kisaan-dost.git
+git clone https://github.com/GauravMishra537/kisaan-dost.git
 cd kisaan-dost
 
 2️⃣ Install backend dependencies
